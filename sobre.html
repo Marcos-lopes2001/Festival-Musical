@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Festival Nazareno 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .sobre-page {
+            padding: 40px 0 60px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 48px;
+            margin-top: 20px;
+        }
+
+        .sobre-info h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .sobre-info h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin: 24px 0 12px;
+        }
+
+        .sobre-info p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .sobre-info ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .sobre-info li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            list-style: none;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .sobre-info li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .sobre-lateral {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card-info {
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .card-info h4 {
+            font-size: 13px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .card-info p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .card-info .card-icone {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .page-header h1 {
+                font-size: 28px;
+            }
+            .sobre-info h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena da Central</span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="programacao.html">Programação</a></li>
+                    <li><a href="participantes.html">Participantes</a></li>
+                    <li><a href="sobre.html" class="active">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Sobre o Festival</h1>
+                <p>Conheça a história e o propósito do Festival Nazareno</p>
+            </div>
+        </section>
+
+        <section class="sobre-page">
+            <div class="container">
+                <div class="sobre-grid">
+                    <div class="sobre-info">
+                        <h2> O que é o Festival Nazareno?</h2>
+                        <p>O <strong>Festival Nazareno</strong> é um evento anual promovido pela <strong>Igreja Nazarena da Central</strong>, que reúne jovens, membros da congregação e a comunidade em geral para um dia especial de <strong>louvor, adoração e reflexão espiritual</strong>.</p>
+                        
+                        <h3> Objetivos do Evento</h3>
+                        <ul>
+                            <li>Promover a união dos jovens através da música e adoração</li>
+                            <li>Fortalecer a fé e o compromisso com os valores cristãos</li>
+                            <li>Proporcionar um ambiente de comunhão e crescimento espiritual</li>
+                            <li>Revelar novos talentos musicais na igreja</li>
+                            <li>Integrar a comunidade em momentos de louvor</li>
+                        </ul>
+
+                        <h3> Edição 2026</h3>
+                        <p>A edição de <strong>2026</strong> será realizada no dia <strong>7 de Agosto</strong>, na <strong>Igreja Nazarena da Central</strong>, com a participação de grupos de louvor da <strong>JNI Central</strong> e <strong>JNI Distrito</strong>.</p>
+                        
+                        <h3> Mensagem</h3>
+                        <p>O Festival Nazareno 2026 traz como lema: <strong>"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</strong> (Salmo 33:2).</p>
+                    </div>
+
+                    <div class="sobre-lateral">
+                        <div class="card-info">
+                            <span class="card-icone"></span>
+                            <h4>Data</h4>
+                            <p>7 de Agosto de 2026</p>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-icone"></span>
+                            <h4>Local</h4>
+                            <p>Igreja Nazarena da Central</p>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-icone"></span>
+                            <h4>Atrações</h4>
+                            <p>Pregações e Louvores</p>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-icone"></span>
+                            <h4>Participação</h4>
+                            <p>JNI Central e Distrito</p>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-icone"></span>
+                            <h4>Contacto</h4>
+                            <p>84 565 5677</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Festival Nazareno 2026</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>7 de Agosto de 2026</li>
+                            <li>Igreja Nazarena da Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#"> Instagram</a></li>
+                            <li><a href="#"> Facebook</a></li>
+                            <li><a href="#"> YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        var navLinks = document.querySelectorAll('.nav-list a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

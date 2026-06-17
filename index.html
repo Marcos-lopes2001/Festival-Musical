@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Nazareno 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo Festival Nazareno" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena </span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="programacao.html">Programação</a></li>
+                    <li><a href="participantes.html">Participantes</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-texto fade-up">
+                        <span class="hero-tag"> Evento 2026</span>
+                        <h2>Festival Nazareno</h2>
+                        <h3>7 de Agosto · 2026</h3>
+                        <p class="lema">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                        <div class="hero-info">
+                            <div class="info-item"> 7 de Agosto de 2026</div>
+                            <div class="info-item"> Igreja Nazarena da Central</div>
+                            <div class="info-item"> 84 565 5677</div>
+                        </div>
+                        <div class="hero-botoes">
+                            <a href="programacao.html" class="btn btn-primary">Ver Programação</a>
+                            <a href="sobre.html" class="btn btn-secondary">Saber Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contextualização -->
+        <section class="contexto">
+            <div class="container">
+                <div class="contexto-grid">
+                    <div class="contexto-texto fade-left">
+                        <span class="section-tag">Contextualização</span>
+                        <h2>O que é o Festival Nazareno?</h2>
+                        <p>O <strong>Festival Nazareno</strong> é um evento anual promovido pela <strong>Igreja Nazarena da Central</strong>, que reúne jovens, membros da congregação e a comunidade em geral para um dia especial de <strong>louvor, adoração e reflexão espiritual</strong>.</p>
+                        <p>Este evento visa fortalecer a fé, promover a união entre os jovens e proporcionar momentos de comunhão e crescimento espiritual, através da música e da Palavra de Deus.</p>
+                        <blockquote>"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor" — Salmo 33:2</blockquote>
+                        <p>Na edição de <strong>2026</strong>, o festival contará com a participação de grupos de louvor da <strong>JNI Central</strong> e <strong>JNI Distrito</strong>, com momentos de pregação e adoração.</p>
+                    </div>
+                    <div class="contexto-imagem fade-right">
+                        <div class="card-destaque-contexto">
+                            <span class="numero-destaque">6</span>
+                            <p>Edição do Festival</p>
+                        </div>
+                        <div class="card-destaque-contexto" style="margin-top: 16px;">
+                            <span class="numero-destaque">4</span>
+                            <p>Grupos de Louvor</p>
+                        </div>
+                        <div class="card-destaque-contexto" style="margin-top: 16px;">
+                            <span class="numero-destaque">16</span>
+                            <p>JNI Participantes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrossel -->
+        <section class="carrossel-section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-tag">Galeria</span>
+                    <h2>Momentos do Festival</h2>
+                    <p>Recordações dos eventos anteriores</p>
+                </div>
+                <div class="carrossel-container">
+                    <button class="carrossel-btn prev" id="prevBtn">❮</button>
+                   <div class="carrossel-wrapper">
+    <div class="carrossel-track" id="carrosselTrack">
+        <div class="carrossel-slide">
+            <img src="assets/images/1.jpeg" alt="Festival 1" class="carrossel-img">
+            <div class="carrossel-legenda">Momento de Louvor</div>
+        </div>
+        <div class="carrossel-slide">
+            <img src="assets/images/2.jpeg" alt="Festival 2" class="carrossel-img">
+            <div class="carrossel-legenda">Congregação Reunida</div>
+        </div>
+        <div class="carrossel-slide">
+            <img src="assets/images/3.jpeg" alt="Festival 3" class="carrossel-img">
+            <div class="carrossel-legenda">Louvores e Adoração</div>
+        </div>
+        <div class="carrossel-slide">
+            <img src="assets/images/4.jpeg" alt="Festival 4" class="carrossel-img">
+            <div class="carrossel-legenda">Mensagem e Reflexão</div>
+        </div>
+        <div class="carrossel-slide">
+            <img src="assets/images/5.jpeg" alt="Festival 5" class="carrossel-img">
+            <div class="carrossel-legenda">Culto de Encerramento</div>
+        </div>
+    </div>
+</div>
+                    <button class="carrossel-btn next" id="nextBtn">❯</button>
+                </div>
+                <div class="carrossel-indicadores" id="indicadores"></div>
+            </div>
+        </section>
+
+        <!-- Eventos em Destaque - Horizontal -->
+        <section class="destaques-horizontal">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-tag">Destaques</span>
+                    <h2>Eventos em Destaque</h2>
+                    <p>Os momentos mais esperados do festival</p>
+                </div>
+                <div class="destaques-scroll-wrapper">
+                    <div class="destaques-scroll">
+                        <div class="destaque-card fade-up delay-1">
+                            <span class="destaque-icone"></span>
+                            <span class="destaque-tag">Destaque</span>
+                            <h4>Sessão de Louvor</h4>
+                            <p>Grupo A - JNI Central</p>
+                            <time>09:00 – 10:30</time>
+                        </div>
+                        <div class="destaque-card destaque-especial fade-up delay-2">
+                            <span class="destaque-icone"></span>
+                            <span class="destaque-tag">Principal</span>
+                            <h4>Palavra do Senhor</h4>
+                            <p>Pregação edificante</p>
+                            <time>10:30 – 11:30</time>
+                            <span class="destaque-destaque">★ Destaque</span>
+                        </div>
+                        <div class="destaque-card fade-up delay-3">
+                            <span class="destaque-icone"></span>
+                            <span class="destaque-tag">Destaque</span>
+                            <h4>Louvores Finais</h4>
+                            <p>Grupos C e D</p>
+                            <time>15:30 – 17:00</time>
+                        </div>
+                        <div class="destaque-card fade-up delay-4">
+                            <span class="destaque-icone"></span>
+                            <span class="destaque-tag">Encerramento</span>
+                            <h4>Considerações Finais</h4>
+                            <p>Bênção e agradecimentos</p>
+                            <time>17:00 – 17:30</time>
+                        </div>
+                        <div class="destaque-card fade-up delay-5">
+                            <span class="destaque-icone"></span>
+                            <span class="destaque-tag">Destaque</span>
+                            <h4>Adoração</h4>
+                            <p>Momento de adoração</p>
+                            <time>14:00 – 15:30</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programação -->
+        <section class="programa-resumo">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-tag">Programação</span>
+                    <h2>Agenda do Evento</h2>
+                    <p>7 de Agosto de 2026 · Igreja Nazarena da Central</p>
+                </div>
+                <div class="programa-grid">
+                    <div class="programa-card fade-up">
+                        <div class="programa-hora">08:00 – 09:00</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo abertura">Abertura</span>
+                            <h4>Culto de Abertura</h4>
+                            <p>Boas-vindas e apresentação do evento</p>
+                        </div>
+                    </div>
+                    <div class="programa-card fade-up delay-1">
+                        <div class="programa-hora">09:00 – 10:30</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo louvor">Louvor</span>
+                            <h4>Sessão de Louvores</h4>
+                            <p>Grupo A - JNI Central</p>
+                        </div>
+                    </div>
+                    <div class="programa-card destaque fade-up delay-2">
+                        <div class="programa-hora">10:30 – 11:30</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo pregaçao">Pregação ★</span>
+                            <h4>Palavra do Senhor</h4>
+                            <p>Mensagem edificante para todos</p>
+                        </div>
+                    </div>
+                    <div class="programa-card fade-up delay-3">
+                        <div class="programa-hora">11:30 – 12:30</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo louvor">Louvor</span>
+                            <h4>Sessão de Louvores</h4>
+                            <p>Grupo B - JNI Distrito</p>
+                        </div>
+                    </div>
+                    <div class="programa-card fade-up delay-4">
+                        <div class="programa-hora">12:30 – 14:00</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo intervalo">Intervalo</span>
+                            <h4>Pausa para Almoço</h4>
+                            <p>Confraternização</p>
+                        </div>
+                    </div>
+                    <div class="programa-card destaque fade-up delay-5">
+                        <div class="programa-hora">14:00 – 15:30</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo pregaçao">Pregação ★</span>
+                            <h4>Culto da Tarde</h4>
+                            <p>Palavra e louvor</p>
+                        </div>
+                    </div>
+                    <div class="programa-card fade-up delay-6">
+                        <div class="programa-hora">15:30 – 17:00</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo louvor">Louvor</span>
+                            <h4>Louvores Finais</h4>
+                            <p>Grupos C e D - JNI</p>
+                        </div>
+                    </div>
+                    <div class="programa-card fade-up delay-7">
+                        <div class="programa-hora">17:00 – 17:30</div>
+                        <div class="programa-info">
+                            <span class="programa-tipo encerramento">Encerramento</span>
+                            <h4>Considerações Finais</h4>
+                            <p>Bênção e agradecimentos</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="programacao.html" class="btn btn-primary">Ver Programação Completa →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Participantes -->
+        <section class="participantes-section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-tag">Participantes</span>
+                    <h2>Grupos de Louvor</h2>
+                    <p>Conheça os grupos que vão ministrar</p>
+                </div>
+                <div class="grupos-grid">
+                    <div class="grupo-card fade-up">
+                        <span class="grupo-letra">A</span>
+                        <h3>Grupo A</h3>
+                        <p>JNI Central</p>
+                        <div class="integrantes">
+                            <span class="integrante">4 JNI</span>
+                        </div>
+                    </div>
+                    <div class="grupo-card fade-up delay-1">
+                        <span class="grupo-letra">B</span>
+                        <h3>Grupo B</h3>
+                        <p>JNI Distrito</p>
+                        <div class="integrantes">
+                            <span class="integrante">4 JNI</span>
+                        </div>
+                    </div>
+                    <div class="grupo-card fade-up delay-2">
+                        <span class="grupo-letra">C</span>
+                        <h3>Grupo C</h3>
+                        <p>JNI Central</p>
+                        <div class="integrantes">
+                            <span class="integrante">4 JNI</span>
+                        </div>
+                    </div>
+                    <div class="grupo-card fade-up delay-3">
+                        <span class="grupo-letra">D</span>
+                        <h3>Grupo D</h3>
+                        <p>JNI Distrito</p>
+                        <div class="integrantes">
+                            <span class="integrante">4 JNI</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="participantes.html" class="btn btn-secondary">Ver Todos os Grupos →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Festival Nazareno 2026</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>7 de Agosto de 2026</li>
+                            <li>Igreja Nazarena da Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#"> Instagram</a></li>
+                            <li><a href="#"> Facebook</a></li>
+                            <li><a href="#"> YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central · Todos os direitos reservados</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

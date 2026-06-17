@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participantes - Festival Nazareno 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .participantes-page {
+            padding: 40px 0 60px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .categoria-grupos {
+            margin-top: 40px;
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .categoria-grupos .categoria-icone {
+            font-size: 30px;
+        }
+
+        .grupos-grid-completo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .grupo-card-completo {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .grupo-card-completo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary);
+        }
+
+        .grupo-header {
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        /* Cores para Adultos - tons de laranja/vermelho */
+        .grupo-header.adulto-a { background: linear-gradient(135deg, #da715f, #c45a47); }
+        .grupo-header.adulto-b { background: linear-gradient(135deg, #da8f5f, #c47a47); }
+        .grupo-header.adulto-c { background: linear-gradient(135deg, #daaf5f, #c49a47); }
+        .grupo-header.adulto-d { background: linear-gradient(135deg, #d4a537, #b8922a); }
+        .grupo-header.adulto-e { background: linear-gradient(135deg, #c47a47, #a8653a); }
+        .grupo-header.adulto-f { background: linear-gradient(135deg, #b86a3a, #9e5a30); }
+
+        /* Cores para Crianças - tons de verde/azul */
+        .grupo-header.crianca-a { background: linear-gradient(135deg, #48bb78, #38a169); }
+        .grupo-header.crianca-b { background: linear-gradient(135deg, #4299e1, #3182ce); }
+        .grupo-header.crianca-c { background: linear-gradient(135deg, #68d391, #48bb78); }
+        .grupo-header.crianca-d { background: linear-gradient(135deg, #63b3ed, #4299e1); }
+        .grupo-header.crianca-e { background: linear-gradient(135deg, #9ae6b4, #68d391); }
+        .grupo-header.crianca-f { background: linear-gradient(135deg, #90cdf4, #63b3ed); }
+
+        .grupo-letra-grande {
+            font-size: 36px;
+            font-weight: 900;
+            display: block;
+        }
+
+        .grupo-header .grupo-tipo {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .grupo-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .grupo-conteudo {
+            padding: 20px;
+        }
+
+        .grupo-conteudo p {
+            margin-bottom: 6px;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+
+        .integrantes-lista {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 6px 0 10px;
+        }
+
+        .integrante-tag {
+            background: var(--primary-bg);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .integrante-tag.crianca {
+            background: #ebf8ff;
+            color: #3182ce;
+        }
+
+        .total-participantes {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--primary-bg);
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .total-participantes span {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        @media (max-width: 1024px) {
+            .grupos-grid-completo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grupos-grid-completo {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 28px;
+            }
+            .categoria-grupos {
+                font-size: 22px;
+            }
+            .grupo-letra-grande {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena da Central</span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="programacao.html">Programação</a></li>
+                    <li><a href="participantes.html" class="active">Participantes</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Grupos de Louvor</h1>
+                <p>Conheça os grupos de Adultos e Crianças que vão ministrar no Festival Nazareno 2026</p>
+            </div>
+        </section>
+
+        <section class="participantes-page">
+            <div class="container">
+                <!-- GRUPOS DE ADULTOS -->
+                <div class="categoria-grupos">
+                    <span class="categoria-icone"></span>
+                    Grupos de Adultos (A-F)
+                </div>
+                <div class="grupos-grid-completo">
+                    <!-- Adulto A -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-a">
+                            <span class="grupo-letra-grande">A</span>
+                            <h2>Grupo A</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                        
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <!-- Adulto B -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-b">
+                            <span class="grupo-letra-grande">B</span>
+                            <h2>Grupo B</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                          
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Adulto C -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-c">
+                            <span class="grupo-letra-grande">C</span>
+                            <h2>Grupo C</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                         
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <!-- Adulto D -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-d">
+                            <span class="grupo-letra-grande">D</span>
+                            <h2>Grupo D</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                         
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                      
+                        </div>
+                    </div>
+
+                    <!-- Adulto E -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-e">
+                            <span class="grupo-letra-grande">E</span>
+                            <h2>Grupo E</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                      
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                       
+                        </div>
+                    </div>
+
+                    <!-- Adulto F -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header adulto-f">
+                            <span class="grupo-letra-grande">F</span>
+                            <h2>Grupo F</h2>
+                            <span class="grupo-tipo">Adultos</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                           
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag">JNI 1</span>
+                                <span class="integrante-tag">JNI 2</span>
+                                <span class="integrante-tag">JNI 3</span>
+                                <span class="integrante-tag">JNI 4</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GRUPOS DE CRIANÇAS -->
+                <div class="categoria-grupos">
+                    <span class="categoria-icone"></span>
+                    Grupos de Crianças (A-F)
+                </div>
+                <div class="grupos-grid-completo">
+                    <!-- Criança A -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-a">
+                            <span class="grupo-letra-grande">A</span>
+                            <h2>Grupo A</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                           
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <!-- Criança B -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-b">
+                            <span class="grupo-letra-grande">B</span>
+                            <h2>Grupo B</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                        
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+             
+                        </div>
+                    </div>
+
+                    <!-- Criança C -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-c">
+                            <span class="grupo-letra-grande">C</span>
+                            <h2>Grupo C</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                     
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+                       
+                        </div>
+                    </div>
+
+                    <!-- Criança D -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-d">
+                            <span class="grupo-letra-grande">D</span>
+                            <h2>Grupo D</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                       
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+                    
+                        </div>
+                    </div>
+
+                    <!-- Criança E -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-e">
+                            <span class="grupo-letra-grande">E</span>
+                            <h2>Grupo E</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                            
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+                      
+                        </div>
+                    </div>
+
+                    <!-- Criança F -->
+                    <div class="grupo-card-completo">
+                        <div class="grupo-header crianca-f">
+                            <span class="grupo-letra-grande">F</span>
+                            <h2>Grupo F</h2>
+                            <span class="grupo-tipo">Crianças</span>
+                        </div>
+                        <div class="grupo-conteudo">
+                     
+                            <p><strong>Integrantes:</strong> 4 JNI</p>
+                            <div class="integrantes-lista">
+                                <span class="integrante-tag crianca">JNI 1</span>
+                                <span class="integrante-tag crianca">JNI 2</span>
+                                <span class="integrante-tag crianca">JNI 3</span>
+                                <span class="integrante-tag crianca">JNI 4</span>
+                            </div>
+                       
+                        </div>
+                    </div>
+                </div>
+
+                <div class="total-participantes">
+                    <span> Total: 12 Grupos</span>
+                    <span> 6 Adultos (A-F)</span>
+                    <span> 6 Crianças (A-F)</span>
+                    <span> 48 JNI Participantes</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Festival Nazareno 2026</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>7 de Agosto de 2026</li>
+                            <li>Igreja Nazarena da Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#"> Instagram</a></li>
+                            <li><a href="#"> Facebook</a></li>
+                            <li><a href="#"> YouTube</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        var navLinks = document.querySelectorAll('.nav-list a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

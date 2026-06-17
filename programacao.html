@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação - Festival Nazareno 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .programacao-completa {
+            padding: 40px 0 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .programacao-item {
+            display: flex;
+            gap: 24px;
+            padding: 20px 24px;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .programacao-item:hover {
+            background: var(--gray-bg);
+            transform: translateX(4px);
+        }
+
+        .programacao-item.destaque {
+            background: var(--primary-bg);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+        }
+
+        .programacao-hora {
+            min-width: 120px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .programacao-info {
+            flex: 1;
+        }
+
+        .programacao-info .categoria {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .programacao-info .categoria.abertura { background: var(--primary); color: var(--white); }
+        .programacao-info .categoria.louvor { background: #48bb78; color: var(--white); }
+        .programacao-info .categoria.pregaçao { background: #d4a537; color: var(--white); }
+        .programacao-info .categoria.intervalo { background: #cbd5e0; color: var(--text-dark); }
+        .programacao-info .categoria.encerramento { background: #9b59b6; color: var(--white); }
+
+        .programacao-info h3 {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .programacao-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .programacao-info .local {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .programacao-item {
+                flex-direction: column;
+                gap: 8px;
+                padding: 16px;
+            }
+            .programacao-hora {
+                min-width: auto;
+                font-size: 13px;
+            }
+            .page-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena da Central</span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="programacao.html" class="active">Programação</a></li>
+                    <li><a href="participantes.html">Participantes</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Programação do Festival</h1>
+                <p>7 de Agosto de 2026 · Igreja Nazarena da Central</p>
+            </div>
+        </section>
+
+        <section class="programacao-completa">
+            <div class="container">
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora">08:00 – 09:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria abertura">Abertura</span>
+                        <h3>Culto de Abertura</h3>
+                        <p>Boas-vindas, apresentação do evento e oração inicial</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">09:00 – 10:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>Sessão de Louvores - Grupo A</h3>
+                        <p>JNI Central - Ministração musical</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora">10:30 – 11:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria pregaçao">Pregação ★</span>
+                        <h3>Palavra do Senhor</h3>
+                        <p>Mensagem edificante para todos os presentes</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">11:30 – 12:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>Sessão de Louvores - Grupo B</h3>
+                        <p>JNI Distrito - Ministração musical</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">12:30 – 14:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria intervalo">Intervalo</span>
+                        <h3>Pausa para Almoço</h3>
+                        <p>Confraternização entre os participantes</p>
+                        <span class="local"> Área de Convivência</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora">14:00 – 15:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria pregaçao">Pregação ★</span>
+                        <h3>Culto da Tarde</h3>
+                        <p>Palavra do Senhor e momentos de louvor</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">15:30 – 17:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>Sessão de Louvores Finais</h3>
+                        <p>Grupos C e D - JNI Central e Distrito</p>
+                        <span class="local">Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">17:00 – 17:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria encerramento">Encerramento</span>
+                        <h3>Considerações Finais</h3>
+                        <p>Bênção, agradecimentos e encerramento do evento</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Festival Nazareno 2026</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>7 de Agosto de 2026</li>
+                            <li>Igreja Nazarena da Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#"> Instagram</a></li>
+                            <li><a href="#"> Facebook</a></li>
+                            <li><a href="#"> YouTube</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        var navLinks = document.querySelectorAll('.nav-list a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
