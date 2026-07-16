@@ -338,7 +338,7 @@ body {
 }
 
 /* ============================================
-   CARROSSEL - CORRIGIDO
+   CARROSSEL - VERSÃO MELHORADA (SEM PARTES PRETAS)
    ============================================ */
 .carrossel-section {
     padding: 60px 0;
@@ -358,25 +358,63 @@ body {
 .carrossel-wrapper {
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .carrossel-track {
     display: flex;
     transition: transform 0.5s ease;
+    width: 100%;
 }
 
 .carrossel-slide {
     min-width: 100%;
     position: relative;
-    aspect-ratio: 16/9;
+    width: 100%;
+    flex-shrink: 0;
     background: #1a202c;
 }
 
+/* CORREÇÃO: imagem ocupa 100% do slide */
 .carrossel-img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+}
+
+/* Desktop - proporção 16:9 */
+@media (min-width: 769px) {
+    .carrossel-slide {
+        aspect-ratio: 16/9;
+    }
+    
+    .carrossel-img {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* Tablet - proporção 4:3 */
+@media (max-width: 768px) and (min-width: 481px) {
+    .carrossel-slide {
+        aspect-ratio: 4/3;
+    }
+    
+    .carrossel-img {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* Mobile - proporção 1:1 (quadrada) */
+@media (max-width: 480px) {
+    .carrossel-slide {
+        aspect-ratio: 1/1;
+    }
+    
+    .carrossel-img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
 }
 
 .carrossel-legenda {
@@ -391,6 +429,8 @@ body {
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.5px;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .carrossel-btn {
@@ -443,31 +483,35 @@ body {
     border-radius: 6px;
 }
 
+/* Ajustes para mobile */
 @media (max-width: 768px) {
-    .carrossel-slide {
-        aspect-ratio: 4/3;
-    }
-    .carrossel-legenda {
-        font-size: 13px;
-        padding: 12px;
-    }
     .carrossel-btn {
         width: 32px;
         height: 32px;
         font-size: 14px;
     }
+    
+    .carrossel-legenda {
+        font-size: 13px;
+        padding: 12px;
+    }
 }
 
 @media (max-width: 480px) {
-    .carrossel-slide {
-        aspect-ratio: 3/4;
+    .carrossel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
     }
+    
+    .carrossel-btn.prev { left: 6px; }
+    .carrossel-btn.next { right: 6px; }
+    
     .carrossel-legenda {
         font-size: 11px;
         padding: 10px;
     }
 }
-
 /* ============================================
    DESTAQUES - GRID HORIZONTAL (sem scroll)
    ============================================ */
