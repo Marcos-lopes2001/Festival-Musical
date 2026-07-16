@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNI Maputo - Festival Nazareno 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .jni-page {
+            padding: 40px 0 60px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .jni-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 48px;
+            margin-top: 30px;
+        }
+
+        .jni-info h2 {
+            font-size: 28px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .jni-info h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin: 30px 0 12px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+        }
+
+        .jni-info p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .jni-info ul {
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+
+        .jni-info li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            list-style: none;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .jni-info li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .jni-lateral {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-info-jni {
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .card-info-jni .card-icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .card-info-jni h4 {
+            font-size: 13px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .card-info-jni .numero-grande {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .card-info-jni p {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin: 4px 0 0 0;
+        }
+
+        /* Direção */
+        .direcao-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .direcao-card {
+            background: var(--primary-bg);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(218, 113, 95, 0.15);
+        }
+
+        .direcao-card .cargo {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .direcao-card .nome {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 4px 0;
+        }
+
+        .direcao-card .funcao {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Comissões */
+        .comissoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .comissao-card {
+            background: var(--white);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .comissao-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .comissao-card .comissao-icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .comissao-card h5 {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .comissao-card p {
+            font-size: 10px;
+            color: var(--text-light);
+            margin: 2px 0 0 0;
+        }
+
+        /* Áreas de Trabalho */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .area-card {
+            background: var(--primary-bg);
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .area-card .area-icon {
+            font-size: 22px;
+            display: block;
+        }
+
+        .area-card h5 {
+            font-size: 12px;
+            color: var(--text-dark);
+            margin: 4px 0 0 0;
+        }
+
+        /* Números */
+        .numeros-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .numero-item {
+            background: var(--white);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .numero-item .num {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .numero-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .jni-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .page-header h1 {
+                font-size: 28px;
+            }
+            .direcao-grid {
+                grid-template-columns: 1fr;
+            }
+            .comissoes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .numeros-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .comissoes-grid {
+                grid-template-columns: 1fr;
+            }
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+            .numeros-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena de Maputo Central</span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="programacao.html">Programação</a></li>
+                    <li><a href="participantes.html">Participantes</a></li>
+                    <li><a href="avante.html">Avante</a></li>
+                    <li><a href="jni.html" class="active">JNI Maputo</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>JNI Maputo</h1>
+                <p>Juventude Nazarena Internacional · Distrito Eclesiástico de Maputo</p>
+            </div>
+        </section>
+
+        <section class="jni-page">
+            <div class="container">
+                <div class="jni-grid">
+                    <div class="jni-info">
+                        <h2> Historial da JNI Maputo</h2>
+                        <p>A <strong>Juventude Nazarena Internacional (JNI)</strong> é o braço jovem da Igreja Nazarena, dedicada a <strong>formar discípulos, promover o crescimento espiritual e impactar a sociedade</strong> através do evangelismo e ações sociais.</p>
+                        <p>No <strong>Distrito Eclesiástico de Maputo</strong>, a JNI atua como um movimento vibrante que reúne jovens de todas as mocidades, promovendo a comunhão, o serviço e a adoração.</p>
+
+                        <h3> Visão e Missão</h3>
+                        <p><strong>Visão:</strong> Ser uma juventude espiritual, dinâmica e relevante, transformando vidas e comunidades através do Evangelho.</p>
+                        <p><strong>Missão:</strong> Formar jovens discípulos de Cristo, capacitados para servir e liderar, promovendo o avivamento espiritual e o impacto social.</p>
+
+                        <h3> Valores</h3>
+                        <ul>
+                            <li>Fidelidade a Deus e à Sua Palavra</li>
+                            <li>Unidade e Comunhão entre os jovens</li>
+                            <li>Serviço e Compromisso com a Igreja e a Comunidade</li>
+                            <li>Excelência e Integridade em todas as ações</li>
+                            <li>Evangelismo e Missões</li>
+                        </ul>
+
+                        <h3> Direcção Distrital da JNI Maputo</h3>
+                        <div class="direcao-grid">
+                            <div class="direcao-card">
+                                <span class="cargo">Presidente</span>
+                                <div class="nome">Mauro Mbanze</div>
+                            </div>
+                            <div class="direcao-card">
+                                <span class="cargo">Vice-Presidente</span>
+                                <div class="nome">Edson Kau</div>
+                             </div>
+                            <div class="direcao-card">
+                                <span class="cargo">Secretário</span>
+                                <div class="nome">Lourino Langa</div>
+                           
+                            </div>
+                            <div class="direcao-card">
+                                <span class="cargo">Vice-Secretária</span>
+                                <div class="nome">Salmina Tembe</div>
+                           
+                            </div>
+                            <div class="direcao-card">
+                                <span class="cargo">Tesoureira</span>
+                                <div class="nome">Cintya Zita</div>
+                                
+                            </div>
+                             <div class="direcao-card">
+                                <span class="cargo">Vice-Tesoureira</span>
+                                <div class="nome">Awita Mahanjane</div>
+                            </div>
+
+                           <div class="direcao-card">
+                                <span class="cargo">Evangelista</span>
+                                <div class="nome">Ezequiel Manjate</div>
+                            </div>
+                            <div class="direcao-card">
+                                <span class="cargo">Vice-Evangelista</span>
+                                <div class="nome">Adriano Sitoe</div>
+                            </div>
+                        </div>
+
+                       
+
+                        
+                    </div>
+
+                    <div class="jni-lateral">
+                        <div class="card-info-jni">
+                            <span class="card-icon"></span>
+                            <h4>Mocidades</h4>
+                            <span class="numero-grande">40</span>
+                            <p>Mocidades cadastradas no distrito</p>
+                        </div>
+
+                        <div class="card-info-jni">
+                            <span class="card-icon"></span>
+                            <h4>JNI Participantes</h4>
+                            <span class="numero-grande">200+</span>
+                            <p>Jovens ativos na JNI Maputo</p>
+                        </div>
+
+                        <div class="card-info-jni">
+                            <span class="card-icon"></span>
+                            <h4>Eventos Anuais</h4>
+                            <span class="numero-grande">12+</span>
+                            <p>Atividades ao longo do ano</p>
+                        </div>
+
+                        <div class="card-info-jni">
+                            <span class="card-icon"></span>
+                            <h4>Grupos</h4>
+                            <span class="numero-grande">7</span>
+                            <p>Grupos A, B, C, D, E, F, G</p>
+                        </div>
+
+                        <div class="card-info-jni">
+                            <span class="card-icon"></span>
+                            <h4>Avante Jovem</h4>
+                            <span class="numero-grande">214.780 MT</span>
+                            <p>Total arrecadado em 2026</p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Igreja Nazarena de Maputo Central</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="avante.html">Avante</a></li>
+                            <li><a href="jni.html">JNI Maputo</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>15 de Agosto de 2026</li>
+                            <li>Igreja Nazarena de Maputo Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central · Todos os direitos reservados</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        var navLinks = document.querySelectorAll('.nav-list a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>

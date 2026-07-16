@@ -9,79 +9,8 @@
     <style>
         .programacao-completa {
             padding: 40px 0 60px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .programacao-item {
-            display: flex;
-            gap: 24px;
-            padding: 20px 24px;
-            border-bottom: 1px solid #e2e8f0;
-            transition: background 0.3s;
-            background: var(--white);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .programacao-item:hover {
-            background: var(--gray-bg);
-            transform: translateX(4px);
-        }
-
-        .programacao-item.destaque {
-            background: var(--primary-bg);
-            border-left: 4px solid var(--primary);
-            border-radius: 12px;
-        }
-
-        .programacao-hora {
-            min-width: 120px;
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-
-        .programacao-info {
-            flex: 1;
-        }
-
-        .programacao-info .categoria {
-            display: inline-block;
-            padding: 2px 12px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .programacao-info .categoria.abertura { background: var(--primary); color: var(--white); }
-        .programacao-info .categoria.louvor { background: #48bb78; color: var(--white); }
-        .programacao-info .categoria.pregaçao { background: #d4a537; color: var(--white); }
-        .programacao-info .categoria.intervalo { background: #cbd5e0; color: var(--text-dark); }
-        .programacao-info .categoria.encerramento { background: #9b59b6; color: var(--white); }
-
-        .programacao-info h3 {
-            font-size: 18px;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-        }
-
-        .programacao-info p {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 4px;
-        }
-
-        .programacao-info .local {
-            font-size: 12px;
-            color: var(--text-light);
-            font-weight: 500;
-            display: block;
-            margin-top: 4px;
         }
 
         .page-header {
@@ -102,11 +31,130 @@
             font-size: 18px;
         }
 
+        .programacao-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            align-items: flex-start;
+        }
+
+        .programacao-item:hover {
+            background: var(--gray-bg);
+            transform: translateX(4px);
+        }
+
+        .programacao-item.destaque {
+            background: var(--primary-bg);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+        }
+
+        .programacao-item.destaque-musical {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            border-radius: 12px;
+        }
+
+        .programacao-hora {
+            min-width: 130px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .programacao-hora .hora-icon {
+            margin-right: 4px;
+        }
+
+        .programacao-info {
+            flex: 1;
+        }
+
+        .programacao-info .categoria {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .programacao-info .categoria.abertura { background: var(--primary); color: var(--white); }
+        .programacao-info .categoria.louvor { background: #48bb78; color: var(--white); }
+        .programacao-info .categoria.pregaçao { background: #d4a537; color: var(--white); }
+        .programacao-info .categoria.musical { background: #4299e1; color: var(--white); }
+        .programacao-info .categoria.intervalo { background: #cbd5e0; color: var(--text-dark); }
+        .programacao-info .categoria.encerramento { background: #9b59b6; color: var(--white); }
+        .programacao-info .categoria.comedia { background: #ed8936; color: var(--white); }
+        .programacao-info .categoria.avante { background: #e53e3e; color: var(--white); }
+
+        .programacao-info h3 {
+            font-size: 17px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .programacao-info .responsavel {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .programacao-info .responsavel strong {
+            color: var(--text-dark);
+        }
+
+        .programacao-info .local {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .categoria-dia {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .categoria-dia .dia-icone {
+            font-size: 28px;
+        }
+
+        .total-eventos {
+            text-align: center;
+            margin-top: 30px;
+            padding: 16px;
+            background: var(--primary-bg);
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
         @media (max-width: 768px) {
             .programacao-item {
                 flex-direction: column;
                 gap: 8px;
-                padding: 16px;
+                padding: 14px 16px;
             }
             .programacao-hora {
                 min-width: auto;
@@ -114,6 +162,12 @@
             }
             .page-header h1 {
                 font-size: 28px;
+            }
+            .categoria-dia {
+                font-size: 20px;
+            }
+            .programacao-info h3 {
+                font-size: 15px;
             }
         }
     </style>
@@ -126,7 +180,7 @@
                     <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
                 </div>
                 <div class="titulo-logo">
-                    <span class="pequeno">Igreja Nazarena da Central</span>
+                    <span class="pequeno">Igreja Nazarena de Maputo Central</span>
                     <h1>Festival Nazareno 2026</h1>
                     <span class="subtitulo">JNI · Distrito</span>
                 </div>
@@ -136,7 +190,9 @@
                 <ul class="nav-list" id="navList">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="programacao.html" class="active">Programação</a></li>
+                    <li><a href="avante.html">Avante</a></li>
                     <li><a href="participantes.html">Participantes</a></li>
+                     <li><a href="jni.html">JNI Maputo</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
@@ -147,90 +203,218 @@
         <section class="page-header">
             <div class="container">
                 <h1>Programação do Festival</h1>
-                <p>7 de Agosto de 2026 · Igreja Nazarena da Central</p>
+                <p>15 de Agosto de 2026 · Igreja Nazarena de Maputo Central</p>
             </div>
         </section>
 
         <section class="programacao-completa">
             <div class="container">
+                <div class="categoria-dia">
+                    <span class="dia-icone"></span>
+                    15 de Agosto de 2026
+                </div>
+
+                <!-- Abertura -->
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora">08:00 – 09:00</div>
+                    <div class="programacao-hora"><span class="hora-icon"></span>08:00 – 08:45</div>
                     <div class="programacao-info">
                         <span class="categoria abertura">Abertura</span>
-                        <h3>Culto de Abertura</h3>
-                        <p>Boas-vindas, apresentação do evento e oração inicial</p>
+                        <h3> MIX Musica Gospel</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> DJ / Técnico de Som</p>
                         <span class="local"> Igreja Nazarena da Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora">09:00 – 10:30</div>
+                    <div class="programacao-hora"><span class="hora-icon"></span>08:50 – 09:30</div>
                     <div class="programacao-info">
                         <span class="categoria louvor">Louvor</span>
-                        <h3>Sessão de Louvores - Grupo A</h3>
-                        <p>JNI Central - Ministração musical</p>
+                        <h3>Hinos de Abertura (Prelúdio)</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Grupo de Louvor</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>09:35 – 09:40</div>
+                    <div class="programacao-info">
+                        <span class="categoria abertura">Oração</span>
+                        <h3> Oração de Abertura</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Pastor Eduardo Macamo</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>09:42 – 09:50</div>
+                    <div class="programacao-info">
+                        <span class="categoria abertura">Palavra Inicial</span>
+                        <h3> Palavra Inicial</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Superintendente Distrital</p>
+                        <span class="local">📍 Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- 1º Momento de Adoração -->
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora"><span class="hora-icon"></span>09:50 – 10:10</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 1º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Noelia Machava</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>10:15 – 10:25</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 2º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Exército do Senhor</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Pregação -->
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora"><span class="hora-icon"></span>10:30 – 11:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria pregaçao">Pregação ★</span>
+                        <h3> PALAVRA DE DEUS (MENSAGEM)</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Pastor Salomão Tivane</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>11:05 – 11:20</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 3º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Armando Conjo</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>11:25 – 11:45</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 4º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Shanaya Rui</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Desfile Musical Júniors -->
+                <div class="programacao-item destaque-musical">
+                    <div class="programacao-hora"><span class="hora-icon"></span>12:00 – 13:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria musical">Desfile Musical</span>
+                        <h3> DESFILE MUSICAL JÚNIORES</h3>
+                        <p class="responsavel">
+                            <strong>Grupo C:</strong> Vania Guila<br>
+                            <strong>Grupo B:</strong> Biuty Elisa<br>
+                            <strong>Grupo A:</strong> Cintia Boene
+                        </p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Stand Up Comedy -->
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>13:10 – 13:25</div>
+                    <div class="programacao-info">
+                        <span class="categoria comedia">Comédia</span>
+                        <h3> Stand Up Comedy Gospel</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Eduh Tallents e Borges</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Avante Jovem -->
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora"><span class="hora-icon"></span>13:30 – 14:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria avante">Avante Jovem</span>
+                        <h3> AVANTE JOVEM</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Fílsia Inguane</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>14:05 – 14:25</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 5º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Moises Mutombene</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Desfile Musical Juventude -->
+                <div class="programacao-item destaque-musical">
+                    <div class="programacao-hora"><span class="hora-icon"></span>14:30 – 16:00</div>
+                    <div class="programacao-info">
+                        <span class="categoria musical">Desfile Musical</span>
+                        <h3> DESFILE MUSICAL JUVENTUDE</h3>
+                        <p class="responsavel">
+                            <strong>Grupo F:</strong> Almeida Tovo<br>
+                            <strong>Grupo E:</strong> Rulfa<br>
+                            <strong>Grupo D:</strong> Cintya Zitha<br>
+                            <strong>Grupo C:</strong> Nica<br>
+                            <strong>Grupo B:</strong> Delfina Bucuane<br>
+                            <strong>Grupo A:</strong> Euler
+                        </p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>16:10 – 16:20</div>
+                    <div class="programacao-info">
+                        <span class="categoria louvor">Adoração</span>
+                        <h3> 6º Momento de Adoração</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Luís Chambule</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <!-- Encerramento -->
+                <div class="programacao-item destaque">
+                    <div class="programacao-hora"><span class="hora-icon"></span>16:21 – 16:25</div>
+                    <div class="programacao-info">
+                        <span class="categoria encerramento">Mensagem Final</span>
+                        <h3> Mensagem Final</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Presidente Distrital</p>
                         <span class="local"> Igreja Nazarena da Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora">10:30 – 11:30</div>
-                    <div class="programacao-info">
-                        <span class="categoria pregaçao">Pregação ★</span>
-                        <h3>Palavra do Senhor</h3>
-                        <p>Mensagem edificante para todos os presentes</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item">
-                    <div class="programacao-hora">11:30 – 12:30</div>
-                    <div class="programacao-info">
-                        <span class="categoria louvor">Louvor</span>
-                        <h3>Sessão de Louvores - Grupo B</h3>
-                        <p>JNI Distrito - Ministração musical</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item">
-                    <div class="programacao-hora">12:30 – 14:00</div>
-                    <div class="programacao-info">
-                        <span class="categoria intervalo">Intervalo</span>
-                        <h3>Pausa para Almoço</h3>
-                        <p>Confraternização entre os participantes</p>
-                        <span class="local"> Área de Convivência</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item destaque">
-                    <div class="programacao-hora">14:00 – 15:30</div>
-                    <div class="programacao-info">
-                        <span class="categoria pregaçao">Pregação ★</span>
-                        <h3>Culto da Tarde</h3>
-                        <p>Palavra do Senhor e momentos de louvor</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item">
-                    <div class="programacao-hora">15:30 – 17:00</div>
-                    <div class="programacao-info">
-                        <span class="categoria louvor">Louvor</span>
-                        <h3>Sessão de Louvores Finais</h3>
-                        <p>Grupos C e D - JNI Central e Distrito</p>
-                        <span class="local">Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item">
-                    <div class="programacao-hora">17:00 – 17:30</div>
+                    <div class="programacao-hora"><span class="hora-icon"></span>16:26 – 16:30</div>
                     <div class="programacao-info">
                         <span class="categoria encerramento">Encerramento</span>
-                        <h3>Considerações Finais</h3>
-                        <p>Bênção, agradecimentos e encerramento do evento</p>
+                        <h3> Oração de Encerramento</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Mãe Superintendente Distrital</p>
                         <span class="local"> Igreja Nazarena da Central</span>
                     </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora"><span class="hora-icon"></span>16:30 – 17:30</div>
+                    <div class="programacao-info">
+                        <span class="categoria intervalo">Limpeza</span>
+                        <h3> Limpeza Geral</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                        <span class="local"> Igreja Nazarena da Central</span>
+                    </div>
+                </div>
+
+                <div class="total-eventos">
+                    Total: 18 Eventos · 15 de Agosto de 2026
                 </div>
             </div>
         </section>
@@ -262,8 +446,8 @@
                     <div>
                         <h4>Evento</h4>
                         <ul>
-                            <li>7 de Agosto de 2026</li>
-                            <li>Igreja Nazarena da Central</li>
+                            <li>15 de Agosto de 2026</li>
+                            <li>Igreja Nazarena de Maputo Central</li>
                             <li>Contacto: 84 565 5677</li>
                         </ul>
                     </div>
@@ -272,20 +456,20 @@
                         <ul>
                             <li><a href="#"> Instagram</a></li>
                             <li><a href="#"> Facebook</a></li>
-                            <li><a href="#"> YouTube</a></li>
-                            </ul>
+                          
+                        
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Festival Nazareno · Igreja Nazarena da Central</p>
+                <p>© 2026 Festival Nazareno · Igreja Nazarena de Maputo Central</p>
                 <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Menu Mobile
         var mobileMenuBtn = document.getElementById('mobileMenuBtn');
         var navList = document.getElementById('navList');
 

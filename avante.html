@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avante Jovem 2026 - Festival Nazareno</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .avante-page {
+            padding: 40px 0 60px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: var(--text-dark);
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .avante-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .avante-header h2 {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .avante-header h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+
+        .avante-header .total-geral {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .tabela-avante {
+            width: 100%;
+            overflow-x: auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .tabela-avante table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .tabela-avante thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tabela-avante th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tabela-avante td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-dark);
+        }
+
+        .tabela-avante tbody tr:hover {
+            background: var(--primary-bg);
+        }
+
+        .tabela-avante tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-avante .grupo-cell {
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .tabela-avante .mocidade-cell {
+            font-weight: 500;
+        }
+
+        .tabela-avante .valor-cell {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .tabela-avante .total-grupo {
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-align: right;
+        }
+
+        .tabela-avante .linha-total {
+            background: var(--primary-bg);
+            font-weight: 700;
+        }
+
+        .tabela-avante .linha-total td {
+            padding: 16px;
+            border-top: 2px solid var(--primary);
+        }
+
+        .tabela-avante .linha-total .total-label {
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .tabela-avante .linha-total .total-valor {
+            font-size: 18px;
+            color: var(--primary);
+            text-align: right;
+        }
+
+        .legenda-avante {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .legenda-avante p {
+            margin: 4px 0;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .legenda-avante strong {
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+            .tabela-avante {
+                font-size: 12px;
+            }
+            .tabela-avante th,
+            .tabela-avante td {
+                padding: 8px 10px;
+            }
+            .avante-header .total-geral {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/80x80?text=JNI'">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Igreja Nazarena de Maputo Central</span>
+                    <h1>Festival Nazareno 2026</h1>
+                    <span class="subtitulo">JNI · Distrito</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="programacao.html">Programação</a></li>
+                    <li><a href="participantes.html">Participantes</a></li>
+                    <li><a href="avante.html" class="active">Avante</a></li>
+                     <li><a href="jni.html" >JNI Maputo</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Avante Jovem 2026</h1>
+                <p>Distrito Eclesiástico de Maputo · Juventude Nazarena Internacional</p>
+            </div>
+        </section>
+
+        <section class="avante-page">
+            <div class="container">
+                <div class="avante-header">
+                    <h2>DISTRITO ECLESIÁSTICO DE MAPUTO</h2>
+                    <h3>JUVENTUDE NAZARENA INTERNACIONAL</h3>
+                    <p style="font-size: 18px; color: var(--primary); font-weight: 600; margin-top: 5px;">AVANTE JOVEM - 2026</p>
+                    <div class="total-geral">
+                        TOTAL GERAL: 214,780.00 MT
+                    </div>
+                </div>
+
+                <div class="tabela-avante">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>N.</th>
+                                <th>Grupo</th>
+                                <th>Mocidade</th>
+                                <th>Por Mocidade</th>
+                                <th>Total do Grupo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Grupo A -->
+                            <tr>
+                                <td>1</td>
+                                <td class="grupo-cell">A</td>
+                                <td class="mocidade-cell">BAIXA</td>
+                                <td class="valor-cell">13,660.00</td>
+                                <td class="total-grupo" rowspan="4">54,640.00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="grupo-cell">A</td>
+                                <td class="mocidade-cell">MAPUTO-CIDADE</td>
+                                <td class="valor-cell">13,660.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="grupo-cell">A</td>
+                                <td class="mocidade-cell">MAPUTO-CENTRAL</td>
+                                <td class="valor-cell">13,660.00</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="grupo-cell">A</td>
+                                <td class="mocidade-cell">MAVALANE</td>
+                                <td class="valor-cell">13,660.00</td>
+                            </tr>
+
+                            <!-- Grupo B -->
+                            <tr>
+                                <td>5</td>
+                                <td class="grupo-cell">B</td>
+                                <td class="mocidade-cell">MAGOANINE</td>
+                                <td class="valor-cell">9,500.00</td>
+                                <td class="total-grupo" rowspan="5">47,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="grupo-cell">B</td>
+                                <td class="mocidade-cell">POLANA</td>
+                                <td class="valor-cell">9,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="grupo-cell">B</td>
+                                <td class="mocidade-cell">MATENDENE 2000</td>
+                                <td class="valor-cell">9,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td class="grupo-cell">B</td>
+                                <td class="mocidade-cell">ROMÃO</td>
+                                <td class="valor-cell">9,500.00</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td class="grupo-cell">B</td>
+                                <td class="mocidade-cell">ALBAZINE</td>
+                                <td class="valor-cell">9,500.00</td>
+                            </tr>
+
+                            <!-- Grupo C -->
+                            <tr>
+                                <td>10</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">LAULANE</td>
+                                <td class="valor-cell">6,670.00</td>
+                                <td class="total-grupo" rowspan="6">40,020.00</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">MALI</td>
+                                <td class="valor-cell">6,670.00</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">KM 12</td>
+                                <td class="valor-cell">6,670.00</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">GUAVA</td>
+                                <td class="valor-cell">6,670.00</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">25 DE JUNHO</td>
+                                <td class="valor-cell">6,670.00</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td class="grupo-cell">C</td>
+                                <td class="mocidade-cell">COSTA DO SOL</td>
+                                <td class="valor-cell">6,670.00</td>
+                            </tr>
+
+                            <!-- Grupo D -->
+                            <tr>
+                                <td>16</td>
+                                <td class="grupo-cell">D</td>
+                                <td class="mocidade-cell">GEORGE DIMITROV</td>
+                                <td class="valor-cell">4,740.00</td>
+                                <td class="total-grupo" rowspan="5">23,700.00</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td class="grupo-cell">D</td>
+                                <td class="mocidade-cell">GRANDE MAPUTO</td>
+                                <td class="valor-cell">4,740.00</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td class="grupo-cell">D</td>
+                                <td class="mocidade-cell">BAGAMOIO</td>
+                                <td class="valor-cell">4,740.00</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td class="grupo-cell">D</td>
+                                <td class="mocidade-cell">MATEQUE</td>
+                                <td class="valor-cell">4,740.00</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td class="grupo-cell">D</td>
+                                <td class="mocidade-cell">MUMEMO</td>
+                                <td class="valor-cell">4,740.00</td>
+                            </tr>
+
+                            <!-- Grupo E -->
+                            <tr>
+                                <td>21</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">CATEMBE CHALI</td>
+                                <td class="valor-cell">3,100.00</td>
+                                <td class="total-grupo" rowspan="8">24,800.00</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">CHAMISSAVA 2</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">FERROVIÁRIO</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">MARRACUENE VILA</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">CUMBEZA</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">ZIMPETO</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">MINCHAFUTENE</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td class="grupo-cell">E</td>
+                                <td class="mocidade-cell">BOBOLE</td>
+                                <td class="valor-cell">3,100.00</td>
+                            </tr>
+
+                            <!-- Grupo F -->
+                            <tr>
+                                <td>29</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">ALBAZINE 2</td>
+                                <td class="valor-cell">2,320.00</td>
+                                <td class="total-grupo" rowspan="6">13,920.00</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">TRIUNFO</td>
+                                <td class="valor-cell">2,320.00</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">GUAVA 2</td>
+                                <td class="valor-cell">2,320.00</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">BOLAZE</td>
+                                <td class="valor-cell">2,320.00</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">CATEMBE INCASSANE</td>
+                                <td class="valor-cell">2,320.00</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td class="grupo-cell">F</td>
+                                <td class="mocidade-cell">MUMEMO 2</td>
+                                <td class="valor-cell">2,320.00</td>
+                            </tr>
+
+                            <!-- Grupo G -->
+                            <tr>
+                                <td>35</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">MUTSEKWA</td>
+                                <td class="valor-cell">1,700.00</td>
+                                <td class="total-grupo" rowspan="6">10,200.00</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">MARRACUENE F. SANTA</td>
+                                <td class="valor-cell">1,700.00</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">CATEMBE N'SIME</td>
+                                <td class="valor-cell">1,700.00</td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">MHUNTANHANE</td>
+                                <td class="valor-cell">1,700.00</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">LUIS CABRAL</td>
+                                <td class="valor-cell">1,700.00</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td class="grupo-cell">G</td>
+                                <td class="mocidade-cell">KUMBEZA C</td>
+                                <td class="valor-cell">1,700.00</td>
+                            </tr>
+
+                            <!-- TOTAL GERAL -->
+                            <tr class="linha-total">
+                                <td colspan="4" style="text-align: right; font-size: 16px;">
+                                    <span class="total-label">TOTAL GERAL</span>
+                                </td>
+                                <td class="total-valor">214,780.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Logo" class="logo-footer" onerror="this.src='https://via.placeholder.com/50x50?text=JNI'">
+                        <div>
+                            <h3>Festival Nazareno 2026</h3>
+                            <p>JNI · Distrito</p>
+                        </div>
+                    </div>
+                    <p class="footer-desc">"Louvai ao Senhor com harpas, cantai-lhe com salmos de louvor"</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="avante.html">Avante</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>15 de Agosto de 2026</li>
+                            <li>Igreja Nazarena de Maputo Central</li>
+                            <li>Contacto: 84 565 5677</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Redes Sociais</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Festival Nazareno · Igreja Nazarena de Maputo Central · Todos os direitos reservados</p>
+                <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        var navLinks = document.querySelectorAll('.nav-list a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
