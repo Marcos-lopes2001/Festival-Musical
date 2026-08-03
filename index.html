@@ -6,6 +6,157 @@
     <title>Festival Nazareno 2026</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CARROSSEL - AJUSTADO
+           ============================================ */
+        .carrossel-slide {
+            min-width: 100%;
+            position: relative;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 769px) {
+            .carrossel-slide {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        @media (max-width: 768px) and (min-width: 481px) {
+            .carrossel-slide {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carrossel-slide {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        .carrossel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carrossel-legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            z-index: 5;
+        }
+
+        .carrossel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #1a202c;
+        }
+
+        .carrossel-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .carrossel-track {
+            display: flex;
+            transition: transform 0.8s ease;
+            width: 100%;
+        }
+
+        .carrossel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: var(--white);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carrossel-btn:hover {
+            background: var(--primary);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carrossel-btn.prev { left: 12px; }
+        .carrossel-btn.next { right: 12px; }
+
+        .carrossel-indicadores {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e0;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            padding: 0;
+        }
+
+        .indicador.active {
+            background: var(--primary);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .carrossel-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            .carrossel-legenda {
+                font-size: 13px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carrossel-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            .carrossel-btn.prev { left: 6px; }
+            .carrossel-btn.next { right: 6px; }
+            .carrossel-legenda {
+                font-size: 11px;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -27,7 +178,7 @@
                     <li><a href="programacao.html">Programação</a></li>
                     <li><a href="participantes.html">Participantes</a></li>
                     <li><a href="avante.html">Avante</a></li>
-                     <li><a href="jni.html">JNI Maputo</a></li>
+                    <li><a href="jni.html">JNI Maputo</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
@@ -88,7 +239,7 @@
             </div>
         </section>
 
-        <!-- Carrossel -->
+        <!-- Carrossel - 18 imagens -->
         <section class="carrossel-section">
             <div class="container">
                 <div class="section-header fade-up">
@@ -100,25 +251,78 @@
                     <button class="carrossel-btn prev" id="prevBtn">❮</button>
                     <div class="carrossel-wrapper">
                         <div class="carrossel-track" id="carrosselTrack">
+                            <!-- 18 imagens de 1.jpeg a 18.jpeg -->
                             <div class="carrossel-slide">
-                                <img src="assets/images/1.jpeg" alt="Festival 1" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Momento+de+Louvor'">
+                                <img src="assets/images/1.jpeg" alt="Festival 1" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+1'">
                                 <div class="carrossel-legenda">Momento de Louvor</div>
                             </div>
                             <div class="carrossel-slide">
-                                <img src="assets/images/2.jpeg" alt="Festival 2" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Congregação+Reunida'">
+                                <img src="assets/images/2.jpeg" alt="Festival 2" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+2'">
                                 <div class="carrossel-legenda">Congregação Reunida</div>
                             </div>
                             <div class="carrossel-slide">
-                                <img src="assets/images/3.jpeg" alt="Festival 3" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Louvores+e+Adoração'">
+                                <img src="assets/images/3.jpeg" alt="Festival 3" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+3'">
                                 <div class="carrossel-legenda">Louvores e Adoração</div>
                             </div>
                             <div class="carrossel-slide">
-                                <img src="assets/images/4.jpeg" alt="Festival 4" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Mensagem+e+Reflexão'">
+                                <img src="assets/images/4.jpeg" alt="Festival 4" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+4'">
                                 <div class="carrossel-legenda">Mensagem e Reflexão</div>
                             </div>
                             <div class="carrossel-slide">
-                                <img src="assets/images/5.jpeg" alt="Festival 5" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Culto+de+Encerramento'">
+                                <img src="assets/images/5.jpeg" alt="Festival 5" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+5'">
                                 <div class="carrossel-legenda">Culto de Encerramento</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/6.jpeg" alt="Festival 6" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+6'">
+                                <div class="carrossel-legenda">Momento de Oração</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/7.jpeg" alt="Festival 7" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+7'">
+                                <div class="carrossel-legenda">Jovens em Adoração</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/8.jpeg" alt="Festival 8" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+8'">
+                                <div class="carrossel-legenda">Palavra de Deus</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/9.jpeg" alt="Festival 9" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+9'">
+                                <div class="carrossel-legenda">Momento de Reflexão</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/10.jpeg" alt="Festival 10" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+10'">
+                                <div class="carrossel-legenda">Louvores</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/11.jpeg" alt="Festival 11" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+11'">
+                                <div class="carrossel-legenda">Congregação</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/12.jpeg" alt="Festival 12" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+12'">
+                                <div class="carrossel-legenda">Adoração</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/13.jpeg" alt="Festival 13" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+13'">
+                                <div class="carrossel-legenda">Momento Especial</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/14.jpeg" alt="Festival 14" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+14'">
+                                <div class="carrossel-legenda">Culto</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/15.jpeg" alt="Festival 15" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+15'">
+                                <div class="carrossel-legenda">Oração</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/16.jpeg" alt="Festival 16" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+16'">
+                                <div class="carrossel-legenda">Unidade</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/17.jpeg" alt="Festival 17" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+17'">
+                                <div class="carrossel-legenda">Celebração</div>
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="assets/images/18.jpeg" alt="Festival 18" class="carrossel-img" onerror="this.src='https://via.placeholder.com/800x450?text=Foto+18'">
+                                <div class="carrossel-legenda">Encerramento</div>
                             </div>
                         </div>
                     </div>
@@ -249,9 +453,7 @@
             </div>
         </section>
 
-        <!-- ============================================
-             RESULTADOS ESPERADOS
-             ============================================ -->
+        <!-- Resultados Esperados -->
         <section class="resultados">
             <div class="container">
                 <div class="section-header fade-up">
@@ -284,7 +486,6 @@
                         <div class="resultado-numero">06</div>
                         <h3>Encorajar jovens talentos a desenvolverem os seus dons musicais ao serviço do Reino de Deus</h3>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -375,7 +576,6 @@
                         <ul>
                             <li><a href="https://www.instagram.com/jni_distrito_de_maputo?igsh=MW4zZWUwYmVlNW1xcA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                             <li><a href="https://www.facebook.com/share/19KG9htsmF/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                           
                         </ul>
                     </div>
                 </div>
@@ -387,6 +587,144 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // ============================================
+        // CARROSSEL - 18 IMAGENS | 5 SEGUNDOS
+        // ============================================
+        var track = document.getElementById('carrosselTrack');
+        var slides = document.querySelectorAll('.carrossel-slide');
+        var prevBtn = document.getElementById('prevBtn');
+        var nextBtn = document.getElementById('nextBtn');
+        var indicadoresContainer = document.getElementById('indicadores');
+
+        if (track && slides.length > 0) {
+            var currentSlide = 0;
+            var totalSlides = slides.length;
+            var autoplayInterval = null;
+
+            // Criar indicadores
+            if (indicadoresContainer) {
+                for (var i = 0; i < totalSlides; i++) {
+                    var indicador = document.createElement('button');
+                    indicador.className = 'indicador';
+                    if (i === 0) indicador.classList.add('active');
+                    indicador.setAttribute('data-index', i);
+                    
+                    (function(index) {
+                        indicador.addEventListener('click', function() {
+                            goToSlide(index);
+                            resetAutoplay();
+                        });
+                    })(i);
+                    
+                    indicadoresContainer.appendChild(indicador);
+                }
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                if (currentSlide >= totalSlides) currentSlide = 0;
+                if (currentSlide < 0) currentSlide = totalSlides - 1;
+                
+                track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+                
+                var indicadores = document.querySelectorAll('.indicador');
+                for (var i = 0; i < indicadores.length; i++) {
+                    if (i === currentSlide) {
+                        indicadores[i].classList.add('active');
+                    } else {
+                        indicadores[i].classList.remove('active');
+                    }
+                }
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    nextSlide();
+                    resetAutoplay();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    prevSlide();
+                    resetAutoplay();
+                });
+            }
+
+            function startAutoplay() {
+                if (autoplayInterval) clearInterval(autoplayInterval);
+                // 5 SEGUNDOS = 5000ms
+                autoplayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    startAutoplay();
+                }
+            }
+
+            if (totalSlides > 1) {
+                startAutoplay();
+            }
+
+            var carrosselContainer = document.querySelector('.carrossel-container');
+            if (carrosselContainer) {
+                carrosselContainer.addEventListener('mouseenter', function() {
+                    if (autoplayInterval) clearInterval(autoplayInterval);
+                });
+                carrosselContainer.addEventListener('mouseleave', function() {
+                    startAutoplay();
+                });
+            }
+        }
+
+        // ============================================
+        // MENU MOBILE
+        // ============================================
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+        }
+
+        document.querySelectorAll('.nav-list a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navList.classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // ANIMAÇÕES DE SCROLL
+        // ============================================
+        var observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

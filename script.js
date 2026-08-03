@@ -42,7 +42,7 @@ for (var i = 0; i < elementosAnimados.length; i++) {
 }
 
 // ============================================
-// CARROSSEL - CORRIGIDO (Sem loop)
+// CARROSSEL - CORRIGIDO (18 imagens | 5 segundos)
 // ============================================
 var track = document.getElementById('carrosselTrack');
 var slides = document.querySelectorAll('.carrossel-slide');
@@ -56,6 +56,8 @@ if (track && slides.length > 0) {
     var totalSlides = slides.length;
     var autoplayInterval = null;
     var isPlaying = true;
+
+    console.log('🔄 Carrossel iniciado com ' + totalSlides + ' imagens');
 
     // Criar indicadores
     if (indicadoresContainer) {
@@ -118,16 +120,17 @@ if (track && slides.length > 0) {
         });
     }
 
-    // Autoplay
+    // Autoplay - 5 SEGUNDOS (5000ms)
     function startAutoplay() {
         if (autoplayInterval) {
             clearInterval(autoplayInterval);
             autoplayInterval = null;
         }
         if (totalSlides > 1 && isPlaying) {
+            console.log('▶️ Autoplay iniciado - mudança a cada 5 segundos');
             autoplayInterval = setInterval(function() {
                 nextSlide();
-            }, 4000);
+            }, 5000); // 5000ms = 5 segundos
         }
     }
 
@@ -144,12 +147,14 @@ if (track && slides.length > 0) {
         if (autoplayInterval) {
             clearInterval(autoplayInterval);
             autoplayInterval = null;
+            console.log('⏸️ Autoplay pausado');
         }
     }
 
     function restartAutoplay() {
         isPlaying = true;
         startAutoplay();
+        console.log('▶️ Autoplay reiniciado');
     }
 
     // Iniciar autoplay
@@ -229,4 +234,5 @@ for (var i = 0; i < links.length; i++) {
 }
 
 console.log('🎵 Festival Nazareno 2026 - Site carregado com sucesso!');
-console.log('📅 7 de Agosto de 2026 - Igreja Nazarena da Central');
+console.log('📅 15 de Agosto de 2026 - Igreja Nazarena de Maputo Central');
+console.log('📸 Carrossel com ' + document.querySelectorAll('.carrossel-slide').length + ' imagens');
