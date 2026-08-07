@@ -61,6 +61,12 @@
             border-radius: 12px;
         }
 
+        .programacao-item.parte {
+            background: #fef3c7;
+            border-left: 4px solid #d4a537;
+            border-radius: 12px;
+        }
+
         .programacao-hora {
             min-width: 130px;
             font-weight: 700;
@@ -70,10 +76,6 @@
             align-items: center;
             gap: 4px;
             flex-shrink: 0;
-        }
-
-        .programacao-hora .hora-icon {
-            margin-right: 4px;
         }
 
         .programacao-info {
@@ -95,8 +97,8 @@
         .programacao-info .categoria.musical { background: #4299e1; color: var(--white); }
         .programacao-info .categoria.intervalo { background: #cbd5e0; color: var(--text-dark); }
         .programacao-info .categoria.encerramento { background: #9b59b6; color: var(--white); }
-        .programacao-info .categoria.comedia { background: #ed8936; color: var(--white); }
         .programacao-info .categoria.avante { background: #e53e3e; color: var(--white); }
+        .programacao-info .categoria.parte { background: #d4a537; color: var(--white); }
 
         .programacao-info h3 {
             font-size: 17px;
@@ -192,7 +194,7 @@
                     <li><a href="programacao.html" class="active">Programação</a></li>
                     <li><a href="avante.html">Avante</a></li>
                     <li><a href="participantes.html">Participantes</a></li>
-                     <li><a href="jni.html">JNI Maputo</a></li>
+                    <li><a href="jni.html">JNI Maputo</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
@@ -204,212 +206,197 @@
             <div class="container">
                 <h1>Programação do Festival</h1>
                 <p>15 de Agosto de 2026 · Igreja Nazarena de Maputo Central</p>
+                <p style="font-size: 16px; color: var(--secondary);"><strong>Moderador:</strong> Mauro Cossa</p>
             </div>
         </section>
 
         <section class="programacao-completa">
             <div class="container">
                 <div class="categoria-dia">
-                    <span class="dia-icone"></span>
+                    <span class="dia-icone">📅</span>
                     15 de Agosto de 2026
                 </div>
 
-                <!-- Abertura -->
-                <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>08:00 – 08:45</div>
+                <!-- PARTE I -->
+                <div class="programacao-item parte">
+                    <div class="programacao-hora">🎯 PARTE I</div>
                     <div class="programacao-info">
-                        <span class="categoria abertura">Abertura</span>
-                        <h3> MIX Musica Gospel</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> DJ / Técnico de Som</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="categoria parte">Abertura</span>
+                        <h3>PARTE I - Abertura</h3>
+                        <p class="responsavel"><strong>Moderador:</strong> Mauro Cossa</p>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>08:50 – 09:30</div>
+                    <div class="programacao-hora">08:50 – 09:30</div>
                     <div class="programacao-info">
                         <span class="categoria louvor">Louvor</span>
                         <h3>Hinos de Abertura (Prelúdio)</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Grupo de Louvor</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <p class="responsavel"><strong>Responsável:</strong> Coro Distrital</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>09:35 – 09:40</div>
+                    <div class="programacao-hora">09:35 – 09:40</div>
                     <div class="programacao-info">
                         <span class="categoria abertura">Oração</span>
-                        <h3> Oração de Abertura</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Pastor Eduardo Macamo</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <h3>Oração de Abertura</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Rev. Salomão Tivane</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>09:42 – 09:50</div>
+                    <div class="programacao-hora">09:42 – 09:50</div>
                     <div class="programacao-info">
                         <span class="categoria abertura">Palavra Inicial</span>
-                        <h3> Palavra Inicial</h3>
+                        <h3>Palavra Inicial</h3>
                         <p class="responsavel"><strong>Responsável:</strong> Superintendente Distrital</p>
-                        <span class="local">📍 Igreja Nazarena da Central</span>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
-                <!-- 1º Momento de Adoração -->
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>09:50 – 10:10</div>
+                    <div class="programacao-hora">09:50 – 10:25</div>
                     <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 1º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Noelia Machava</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>🎵 Momento de Louvor</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Delfina Bucuane</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
-                <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>10:15 – 10:25</div>
-                    <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 2º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Exército do Senhor</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <!-- Pregação -->
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>10:30 – 11:00</div>
+                    <div class="programacao-hora">10:30 – 11:00</div>
                     <div class="programacao-info">
                         <span class="categoria pregaçao">Pregação ★</span>
-                        <h3> PALAVRA DE DEUS (MENSAGEM)</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Pastor Salomão Tivane</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <h3>📖 Palavra de Deus</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Pastor Edelson Zitha</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
+                    </div>
+                </div>
+
+                <!-- PARTE II -->
+                <div class="programacao-item parte">
+                    <div class="programacao-hora">🎯 PARTE II</div>
+                    <div class="programacao-info">
+                        <span class="categoria parte">Apresentações</span>
+                        <h3>PARTE II - Apresentações</h3>
+                        <p class="responsavel"><strong>Moderador:</strong> Mauro Cossa</p>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>11:05 – 11:20</div>
+                    <div class="programacao-hora">11:05 – 11:20</div>
                     <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 3º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Armando Conjo</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>🎵 Momento de Louvor</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Coro Distrital</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
-                <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>11:25 – 11:45</div>
-                    <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 4º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Shanaya Rui</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <!-- Desfile Musical Júniors -->
                 <div class="programacao-item destaque-musical">
-                    <div class="programacao-hora"><span class="hora-icon"></span>12:00 – 13:00</div>
+                    <div class="programacao-hora">11:25 – 11:50</div>
                     <div class="programacao-info">
-                        <span class="categoria musical">Desfile Musical</span>
-                        <h3> DESFILE MUSICAL JÚNIORES</h3>
+                        <span class="categoria musical">Apresentações</span>
+                        <h3>🎤 Apresentações - Juniores</h3>
                         <p class="responsavel">
-                            <strong>Grupo C:</strong> Vania Guila<br>
-                            <strong>Grupo B:</strong> Biuty Elisa<br>
-                            <strong>Grupo A:</strong> Cintia Boene
+                            <strong>Grupo D</strong><br>
+                            <strong>Grupo C</strong><br>
+                            <strong>Grupo B</strong><br>
+                            <strong>Grupo A</strong>
                         </p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
-                <!-- Stand Up Comedy -->
-                <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>13:10 – 13:25</div>
-                    <div class="programacao-info">
-                        <span class="categoria comedia">Comédia</span>
-                        <h3> Stand Up Comedy Gospel</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Eduh Tallents e Borges</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <!-- Avante Jovem -->
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>13:30 – 14:00</div>
+                    <div class="programacao-hora">12:00 – 13:00</div>
                     <div class="programacao-info">
                         <span class="categoria avante">Avante Jovem</span>
-                        <h3> AVANTE JOVEM</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Fílsia Inguane</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <h3>🔥 Avante Jovem</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Cinthya Zita</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>14:05 – 14:25</div>
+                    <div class="programacao-hora">13:05 – 13:20</div>
                     <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 5º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Moises Mutombene</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>🎵 Momento de Louvor</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Rafa</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
-                <!-- Desfile Musical Juventude -->
+                <!-- PARTE III -->
+                <div class="programacao-item parte">
+                    <div class="programacao-hora">🎯 PARTE III</div>
+                    <div class="programacao-info">
+                        <span class="categoria parte">Apresentações</span>
+                        <h3>PARTE III - Apresentações</h3>
+                        <p class="responsavel"><strong>Moderador:</strong> Mauro Cossa</p>
+                    </div>
+                </div>
+
+                <div class="programacao-item">
+                    <div class="programacao-hora">13:25 – 13:45</div>
+                    <div class="programacao-info">
+                        <span class="categoria musical">Abertura</span>
+                        <h3>🎶 Abertura das Apresentações</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Maestros da JNI</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
+                    </div>
+                </div>
+
                 <div class="programacao-item destaque-musical">
-                    <div class="programacao-hora"><span class="hora-icon"></span>14:30 – 16:00</div>
+                    <div class="programacao-hora">13:50 – 16:00</div>
                     <div class="programacao-info">
-                        <span class="categoria musical">Desfile Musical</span>
-                        <h3> DESFILE MUSICAL JUVENTUDE</h3>
+                        <span class="categoria musical">Apresentações</span>
+                        <h3>🎤 Apresentações - Juventude</h3>
                         <p class="responsavel">
-                            <strong>Grupo F:</strong> Almeida Tovo<br>
-                            <strong>Grupo E:</strong> Rulfa<br>
-                            <strong>Grupo D:</strong> Cintya Zitha<br>
-                            <strong>Grupo C:</strong> Nica<br>
-                            <strong>Grupo B:</strong> Delfina Bucuane<br>
-                            <strong>Grupo A:</strong> Euler
+                            <strong>Grupo F</strong><br>
+                            <strong>Grupo E</strong><br>
+                            <strong>Grupo D</strong><br>
+                            <strong>Grupo C</strong><br>
+                            <strong>Grupo B</strong><br>
+                            <strong>Grupo A</strong>
                         </p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>16:10 – 16:20</div>
+                    <div class="programacao-hora">16:10 – 16:20</div>
                     <div class="programacao-info">
-                        <span class="categoria louvor">Adoração</span>
-                        <h3> 6º Momento de Adoração</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Luís Chambule</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <span class="categoria louvor">Louvor</span>
+                        <h3>🎵 Momento de Louvor</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Moises Mutombene</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <!-- Encerramento -->
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>16:21 – 16:25</div>
+                    <div class="programacao-hora">16:21 – 16:25</div>
                     <div class="programacao-info">
                         <span class="categoria encerramento">Mensagem Final</span>
-                        <h3> Mensagem Final</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Presidente Distrital</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <h3>📖 Mensagem Final</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Presidente Distrital - JNI</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
                 <div class="programacao-item destaque">
-                    <div class="programacao-hora"><span class="hora-icon"></span>16:26 – 16:30</div>
+                    <div class="programacao-hora">16:26 – 16:30</div>
                     <div class="programacao-info">
                         <span class="categoria encerramento">Encerramento</span>
-                        <h3> Oração de Encerramento</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Mãe Superintendente Distrital</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
-                    </div>
-                </div>
-
-                <div class="programacao-item">
-                    <div class="programacao-hora"><span class="hora-icon"></span>16:30 – 17:30</div>
-                    <div class="programacao-info">
-                        <span class="categoria intervalo">Limpeza</span>
-                        <h3> Limpeza Geral</h3>
-                        <p class="responsavel"><strong>Responsável:</strong> Todos</p>
-                        <span class="local"> Igreja Nazarena da Central</span>
+                        <h3>🙏 Oração de Encerramento</h3>
+                        <p class="responsavel"><strong>Responsável:</strong> Mãe Sup. Distrital</p>
+                        <span class="local">📍 Igreja Nazarena de Maputo Central</span>
                     </div>
                 </div>
 
@@ -439,7 +426,9 @@
                         <ul>
                             <li><a href="index.html">Início</a></li>
                             <li><a href="programacao.html">Programação</a></li>
+                            <li><a href="avante.html">Avante</a></li>
                             <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="jni.html">JNI Maputo</a></li>
                             <li><a href="sobre.html">Sobre</a></li>
                         </ul>
                     </div>
@@ -454,10 +443,8 @@
                     <div>
                         <h4>Redes Sociais</h4>
                         <ul>
-                           <li><a href="https://www.instagram.com/jni_distrito_de_maputo?igsh=MW4zZWUwYmVlNW1xcA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                            <li><a href="https://www.facebook.com/share/19KG9htsmF/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                          
-                        
+                            <li><a href="https://www.instagram.com/jni_distrito_de_maputo?igsh=MW4zZWUwYmVlNW1xcA==" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/share/19KG9htsmF/" target="_blank">Facebook</a></li>
                         </ul>
                     </div>
                 </div>
@@ -465,9 +452,9 @@
             <div class="footer-bottom">
                 <p>© 2026 Festival Nazareno · Igreja Nazarena de Maputo Central</p>
                 <p class="lema-footer">"Um só coração, uma só voz, para louvor do Senhor"</p>
-                  <p style="margin-top: 10px; font-size: 12px; opacity: 0.5; color: #a0aec0;">
-                Desenvolvido por Marcos Lopes
-            </p>
+                <p style="margin-top: 10px; font-size: 12px; opacity: 0.5; color: #a0aec0;">
+                    Desenvolvido por Marcos Lopes
+                </p>
             </div>
         </div>
     </footer>
